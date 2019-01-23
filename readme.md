@@ -2,8 +2,7 @@
 
 # eloquent-eager-loading
 
- public function boot()
-    {
+
         DB::listen(function($query) {
             Log::info(
                 $query->sql,
@@ -11,7 +10,7 @@
                 $query->time
             );
         });
-    }
+    
 
 $posts = App\Post::all();
 $posts->map(function ($post) { return $post->author; });
